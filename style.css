@@ -1,0 +1,160 @@
+@import url(https://fonts.googleapis.com/css?family=Chango:regular);
+
+:root {
+	--yellow: #ffc776;
+	--blue: #baece7;
+	--pink: #e5d3e4;
+	--red: #f26046;
+	--main-bg: #39511a;
+	--txt-yellow: #402909;
+	--txt-blue: #214441;
+	--txt-pink: #4d254a;
+	--txt-red: #ffffff;
+}
+
+* {
+	font-family: CHANGO;
+	font-size: 72px;
+}
+
+body {
+	background-color: var(--main-bg);
+}
+
+main {
+	padding: 20px;
+	border-radius: 10px;
+	background-color: var(--main-bg);
+	gap: 20px 20px;
+	display: grid;
+	grid-template-columns: 1fr 1fr;
+	grid-template-rows: repeat(12, 1fr);
+}
+
+button {
+	border-radius: 10px;
+	border: 0;
+	padding: 0px 15px 0px 15px;
+	display: flex;
+	justify-content: space-evenly;
+}
+
+button > img {
+	display: none;
+}
+
+.Yellow {
+	background-color: var(--yellow);
+	color: var(--txt-yellow);
+}
+
+button.Yellow > img {
+	filter: invert(14%) sepia(75%) saturate(507%) hue-rotate(356deg)
+		brightness(96%) contrast(97%);
+}
+
+.Blue {
+	background-color: var(--blue);
+	color: var(--txt-blue);
+}
+
+button.Blue > img {
+	filter: invert(20%) sepia(56%) saturate(359%) hue-rotate(125deg)
+		brightness(96%) contrast(91%);
+}
+
+.Pink {
+	background-color: var(--pink);
+	color: var(--txt-pink);
+}
+
+button.Pink > img {
+	filter: brightness(0) saturate(100%) invert(14%) sepia(18%) saturate(3710%)
+		hue-rotate(267deg) brightness(92%) contrast(86%);
+}
+
+.Red {
+	background-color: var(--red);
+	color: var(--txt-red);
+}
+
+button.Red > img {
+	filter: invert(100%) sepia(0%) saturate(1%) hue-rotate(197deg)
+		brightness(103%) contrast(101%);
+}
+
+@media screen and (min-width: 720px) {
+	body {
+		background-color: transparent;
+	}
+	main {
+		grid-template-columns: 1fr 1fr 1fr;
+		grid-template-rows: repeat(8, 1fr);
+	}
+	button {
+		align-items: center;
+		justify-content: space-between;
+	}
+
+	button > img {
+		display: initial;
+	}
+
+	main {
+		margin: 2.5%;
+	}
+}
+
+@media screen and (min-width: 1080px) {
+	main {
+		grid-template-columns: repeat(4, 1fr);
+		grid-template-rows: repeat(6, 1fr);
+		margin: 3.5%;
+	}
+}
+
+button:hover {
+	transition: 0.5s;
+	transform: scale(130%) rotateY(180deg);
+}
+
+button.Yellow:hover {
+	background-color: var(--txt-yellow);
+	color: var(--yellow);
+}
+
+button.Yellow:hover > img {
+	filter: brightness(0) saturate(100%) invert(69%) sepia(59%) saturate(348%)
+		hue-rotate(346deg) brightness(105%) contrast(104%);
+}
+
+button.Blue:hover {
+	background-color: var(--txt-blue);
+	color: var(--blue);
+}
+
+button.Blue:hover > img {
+	filter: brightness(0) saturate(100%) invert(95%) sepia(45%) saturate(298%)
+		hue-rotate(93deg) brightness(98%) contrast(88%);
+}
+
+button.Pink:hover {
+	background-color: var(--txt-pink);
+	color: var(--pink);
+}
+
+button.Pink:hover > img {
+	filter: brightness(0) saturate(100%) invert(94%) sepia(14%) saturate(400%)
+		hue-rotate(248deg) brightness(93%) contrast(93%);
+}
+
+button.Red:hover {
+	background-color: var(--txt-red);
+	color: var(--red);
+	border: var(--red) 1px solid;
+}
+
+button.Red:hover > img {
+	filter: brightness(0) saturate(100%) invert(70%) sepia(93%) saturate(4817%)
+		hue-rotate(327deg) brightness(98%) contrast(82%);
+}
